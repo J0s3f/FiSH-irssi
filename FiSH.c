@@ -38,7 +38,7 @@ BOOL LoadKeyForContact(const char *contactPtr, char *theKey)
 // encrypt a message and store in bf_dest (using key for target)
 int FiSH_encrypt(const SERVER_REC *server, const char *msg_ptr, const char *target, char *bf_dest)
 {
-	char theKey[KEYBUF_SIZE]="";
+	char theKey[KEYBUF_SIZE]="", *recoded=NULL;
 
 
 	if(IsNULLorEmpty(msg_ptr) || bf_dest==NULL || IsNULLorEmpty(target)) return 0;
@@ -47,9 +47,26 @@ int FiSH_encrypt(const SERVER_REC *server, const char *msg_ptr, const char *targ
 
 	if(LoadKeyForContact(target, theKey)==FALSE) return 0;
 
+#ifdef FiSH_USE_IRSSI_RECODE
+	// recode message again, last time it was the encrypted message...
+	if(settings_get_bool("recode") && server!=NULL)
+	{
+		recoded = recode_out(server, msg_ptr, target);
+	}
+#endif
+
 	strcpy(bf_dest, "+OK ");
 
-	encrypt_string(theKey, msg_ptr, bf_dest+4, strlen(msg_ptr));
+	if (recoded)
+	{
+		encrypt_string(theKey, recoded, bf_dest+4, strlen(recoded));
+		ZeroMemory(recoded, strlen(recoded));
+		g_free(recoded);
+	}
+	else
+	{
+		encrypt_string(theKey, msg_ptr, bf_dest+4, strlen(msg_ptr));
+	}
 
 	ZeroMemory(theKey, KEYBUF_SIZE);
 	return 1;
