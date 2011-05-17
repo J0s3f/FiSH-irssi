@@ -161,7 +161,8 @@ int FiSH_decrypt(const SERVER_REC *server, char *msg_ptr, char *msg_bak, const c
 		}
 	}
 
-	strcpy(msg_bak, bf_dest);	// copy decrypted message back (overwriting the base64 cipher text)
+	strncpy(msg_bak, bf_dest, msg_len);	// copy decrypted message back (overwriting the base64 cipher text)
+	msg_bak[msg_len-1] = '\0';
 	ZeroMemory(bf_dest, sizeof(bf_dest));
 
 	return 1;
