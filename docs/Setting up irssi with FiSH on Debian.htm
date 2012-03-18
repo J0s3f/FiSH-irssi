@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta content="text/html" charset="UTF-8">
+<title>
+Setting up irssi with FiSH on Debian</title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" href="Setting%20up%20irssi%20with%20FiSH%20on%20Debian-Dateien/style.css">
+<link rel="pingback" href="http://jstr.se/xmlrpc.php">
+
+<link rel="alternate" type="application/rss+xml" title="Jester's Corner » Feed" href="http://jstr.se/feed/">
+<link rel="alternate" type="application/rss+xml" title="Jester's Corner » Comments Feed" href="http://jstr.se/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Jester's Corner » Setting up irssi with FiSH on Debian Comments Feed" href="http://jstr.se/archives/setting-up-irssi-with-fish-on-debian/feed/">
+<script type="text/javascript" src="Setting%20up%20irssi%20with%20FiSH%20on%20Debian-Dateien/l10n.js"></script>
+<script type="text/javascript" src="Setting%20up%20irssi%20with%20FiSH%20on%20Debian-Dateien/comment-reply.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://jstr.se/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://jstr.se/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Jester's Corner" href="http://jstr.se/">
+<link rel="start" title="Hello Again World!" href="http://jstr.se/archives/hello-again-world/">
+<link rel="prev" title="How to authenticate on Quakenet" href="http://jstr.se/archives/27/">
+<link rel="next" title="Python: Apache log searcher" href="http://jstr.se/archives/42/">
+<meta name="generator" content="WordPress 3.1.2">
+<link rel="canonical" href="http://jstr.se/archives/setting-up-irssi-with-fish-on-debian/">
+<link rel="shortlink" href="http://jstr.se/?p=37">
+
+<link rel="stylesheet" href="Setting%20up%20irssi%20with%20FiSH%20on%20Debian-Dateien/wp-syntax.css" type="text/css" media="screen">
+<style type="text/css">
+body { background-color: #ffffff; }
+</style>
+
+<!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="http://jstr.se/wp-content/themes/the-common-blog/css/ie.css" />
+<![endif]-->
+
+<script>try {  for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){    var lastpass_f = document.forms[lastpass_iter];    if(typeof(lastpass_f.lpsubmitorig)=="undefined"){      if (typeof(lastpass_f.submit) == "function") {        lastpass_f.lpsubmitorig = lastpass_f.submit;        lastpass_f.submit = function(){          var form = this;          try {            if (document.documentElement && 'createEvent' in document)            {              var forms = document.getElementsByTagName('form');              for (var i=0 ; i<forms.length ; ++i)                if (forms[i]==form)                {                  var element = document.createElement('lpformsubmitdataelement');                  element.setAttribute('formnum',i);                  element.setAttribute('from','submithook');                  document.documentElement.appendChild(element);                  var evt = document.createEvent('Events');                  evt.initEvent('lpformsubmit',true,false);                  element.dispatchEvent(evt);                  break;                }            }          } catch (e) {}          try {            form.lpsubmitorig();          } catch (e) {}        }      }    }  }} catch (e) {}</script><script>try {  for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){    var lastpass_f = document.forms[lastpass_iter];    if(typeof(lastpass_f.lpsubmitorig)=="undefined"){      if (typeof(lastpass_f.submit) == "function") {        lastpass_f.lpsubmitorig = lastpass_f.submit;        lastpass_f.submit = function(){          var form = this;          try {            if (document.documentElement && 'createEvent' in document)            {              var forms = document.getElementsByTagName('form');              for (var i=0 ; i<forms.length ; ++i)                if (forms[i]==form)                {                  var element = document.createElement('lpformsubmitdataelement');                  element.setAttribute('formnum',i);                  element.setAttribute('from','submithook');                  document.documentElement.appendChild(element);                  var evt = document.createEvent('Events');                  evt.initEvent('lpformsubmit',true,false);                  element.dispatchEvent(evt);                  break;                }            }          } catch (e) {}          try {            form.lpsubmitorig();          } catch (e) {}        }      }    }  }} catch (e) {}</script></head>
+
+<body class="single single-post postid-37 single-format-standard">
+
+<div id="wrapper">
+<!-- Header -->
+
+	<div id="header" class="clearfix">
+		
+					<div class="heading">
+		
+				<h1 id="site-header"><a href="http://jstr.se/" title="Jester's Corner" rel="home">Jester's Corner</a></h1>
+				<p id="site-description">Just another useless site</p>
+			
+			</div>
+		
+		
+
+	</div>
+	
+	<div id="menu">
+		<div class="menu"><ul><li><a href="http://jstr.se/" title="Home">Home</a></li><li class="page_item page-item-5"><a href="http://jstr.se/about-me/" title="About Me">About Me</a></li></ul></div>
+		<div class="menu-widgetarea">
+			<ul id="menu-widget">
+							</ul>
+		</div>
+	</div>
+<!-- End Header -->
+
+	
+
+<!-- Content -->
+<div id="content">
+
+	<div id="body">
+			
+		<div class="column content_area">
+		
+				
+	<div id="post-37" class="post-37 post type-post status-publish format-standard hentry category-irc category-linux">
+		
+		<div class="post_meta_wrap">
+		
+							
+			<h2 class="post_title">Setting up irssi with FiSH on Debian</h2>			
+			<p class="posted_on_meta">Posted by <a href="http://jstr.se/archives/author/jstr/" title="Posts by jstr">jstr</a> on  May 4th 2011 @ 2:15 am</p>
+			
+		</div>
+	
+		<p>FiSH is an encryption addon for irssi, it is based on blowfish and 
+is fully compatible to original ‘blowcrypt’ script. It supports private 
+chat and channel encryption. A secure key-exchange system is included 
+aswell. You can read more about FiSH and the available commands at <a href="http://fish.secure.la/irssi/FiSH-irssi.txt">http://fish.secure.la/irssi/FiSH-irssi.txt</a> </p>
+<p><strong>1. Getting everything we need from repositories</strong><br>
+Fire up a terminal </p>
+<pre>apt-get install irssi (if you don't have it already)
+apt-get install build-essential libglib1.2ldbl libglib1.2-dev libglib2.0-0 libglib2.0-dev zip make g++</pre>
+<p><strong>2. Download the FiSH and irssi source</strong> </p>
+<pre>wget http://fish.secure.la/irssi/FiSH-irssi.v0.99-source.zip
+wget http://irssi.org/files/irssi-0.8.12.tar.gz</pre>
+<p><strong>3. Unpacking the archives</strong> </p>
+<pre>unzip FiSH-irssi.v0.99-source.zip
+tar xfzv irssi-0.8.12.tar.gz</pre>
+<p><strong>4. Create the necessary directories</strong> </p>
+<pre>cd FiSH-irssi.v0.99-source
+mkdir MIRACL;cd MIRACL
+cp ../mir_amd64 amd64
+cp ../mir_macosx macosx</pre>
+<p><strong>5. Getting MIRACL, needed for compiling FiSH</strong> </p>
+<pre>wget http://indigo.ie/~mscott/miracl.zip
+unzip -j -aa -L miracl.zip
+bash linux
+cp miracl.a ../
+cd ..</pre>
+<p><strong>6. Adjusting the FiSH Makefile</strong><br>
+Open Makefile in your editor of choice and set glib_dir and irssi_dir to the following parameters: </p>
+<pre>glib_dir = /usr/lib/glib/include
+irssi_dir = /home/username/irssi-0.8.12 (or whereever you unpacked the irssi source in step 3)</pre>
+<p>Create a symlink so that one library will be included </p>
+<pre>ln -s /usr/include/glib-1.2/glib.h /usr/lib/glib/include/glib.h</pre>
+<p>Now we can make. </p>
+<pre>make</pre>
+<p>It will ask you to press enter to go ahead with the make, do so. If 
+all goes well, you’ll get a lot of messages ending with the following: </p>
+<pre>make[1]: Leaving directory `/home/username/FiSH-irssi.v0.99-source'
+rwxr-xr-x 1 username username 123243 2010-09-03 18:06 libfish.so
+e Compiling finished /home/username/FiSH-irssi.v0.99-source/libfish.so</pre>
+<p>You might get a few errors but as long as the libfish.so file is created it should be ok. </p>
+<p><strong>7. Finishing the installation</strong> </p>
+<pre>cp libfish.so /usr/lib/irssi/modules
+rm /usr/lib/glib/include/glib.h (remove the symlink)</pre>
+<p><strong>8. Edit your blow.ini file</strong><br>
+Blow.ini is your FiSH setting and is located at 
+/home/USER/.irssi/blow.ini. Add the following at the top of the file. 
+The setting “mark_encrypted” will show a “&gt;” in front of encrypted 
+lines. Change it to whatever you like. </p>
+<pre>[FiSH]
+process_incoming=1
+process_outgoing=1
+plain_prefix="+p "
+mark_position=1
+mark_encrypted="&gt; "</pre>
+<p><strong>9. Loading FiSH in irssi</strong><br>
+Start up irssi by typing irssi in the terminal. In the status window type: </p>
+<pre>/load fish </pre>
+<p>you’ll see something like this: </p>
+<pre>-!- FiSH: Using default password to decrypt blow.ini... Try /setinipw to set a custom password.
+-!- Irssi: FiSH v0.99 - encryption module for irssi loaded! URL: http://fish.sekure.us
+-!- Irssi: Try /helpfish or /fishhelp for a short command overview
+-!- Irssi: Loaded module fish/core</pre>
+<p>It’s recommended that you encrypt your blow.ini file using /setinipw.<br>
+<strong>10. Getting the key</strong><br>
+Ask someone from the channel to /keyx the key to you. When It appears in a pm, go to the status window and do </p>
+<pre>/setkey #channelname key</pre>
+<p>To exchange keys with someone for encrypted private chatting just use </p>
+<pre>/keyx nick</pre>
+		
+		<span class="pagination">
+					</span>
+		
+		<p class="posted_in_meta">
+			Post filed under <a href="http://jstr.se/archives/category/irc/" title="View all posts in IRC" rel="category tag">IRC</a>, <a href="http://jstr.se/archives/category/linux/" title="View all posts in Linux" rel="category tag">Linux</a>.		</p>	
+	</div>
+	
+			
+<div id="comments">
+
+
+
+								<div id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://jstr.se/archives/setting-up-irssi-with-fish-on-debian/#respond" style="display: none;">Cancel reply</a></small></h3>
+									<form action="http://jstr.se/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name</label> <span class="required">*</span><input id="author" name="author" size="30" aria-required="true" type="text"></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" size="30" aria-required="true" type="text"></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" size="30" type="text"></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a
+ href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; 
+&lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del 
+datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; 
+&lt;strong&gt; &lt;pre lang="" line="" escaped="" highlight=""&gt; </code></p>						<p class="form-submit">
+							<input name="submit" id="submit" value="Post Comment" type="submit">
+							<input name="comment_post_ID" value="37" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+						</p>
+						<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="f6b44a7f2a" type="hidden"></p>					</form>
+							</div><!-- #respond -->
+						
+</div><!-- end comments -->
+	 
+	
+	
+		
+		</div>
+		
+	</div>
+
+	<div id="global_sidebar" class="column">
+	<ul id="sidebar">
+		
+				
+	</ul>
+</div>
+
+</div>
+<!-- End Content -->
+
+<!-- Footer -->
+	<div id="footer">
+				<p id="copyright">Copyright © 2011 <a href="http://jstr.se/">Jester's Corner</a> - Powered by <a href="http://dev.plebeian.se/">The Common Blog</a></p>
+		<p id="powered-by">Running on <a href="http://www.wordpress.org/">WordPress</a></p>
+	</div>
+	<!-- End Footer -->
+</div>
+
+
+
+
+</body></html>
+<!-- Dynamic page generated in 0.514 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2012-03-17 23:30:48 -->
